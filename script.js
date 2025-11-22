@@ -4507,8 +4507,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const day = String(dateObj.getDate()).padStart(2, '0');
     const dateStr = `${year}${month}${day}`;
     
-    // Create Google Calendar URL
-    const calendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(title)}&dates=${dateStr}/${dateStr}&details=${encodeURIComponent(description)}&sf=true&output=xml`;
+    // Create Google Calendar URL with 5-day reminder
+    const calendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(title)}&dates=${dateStr}/${dateStr}&details=${encodeURIComponent(description)}&reminder=5d&sf=true&output=xml`;
     
     // Open in new window/tab
     window.open(calendarUrl, '_blank');
