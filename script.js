@@ -4488,6 +4488,14 @@ document.addEventListener('DOMContentLoaded', function() {
     
     resultDiv.style.display = 'block';
     
+    // Scroll to timeline after a brief delay to ensure DOM is updated
+    setTimeout(function() {
+      const timeline = document.querySelector('.timeline-container');
+      if (timeline) {
+        timeline.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 100);
+    
     // Store result for calendar export
     currentResult = {
       mileage: result.nextMileage,
