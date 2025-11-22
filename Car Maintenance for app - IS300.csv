@@ -1,0 +1,35 @@
+,RECOMMENDED SERVICE KM,8000,16000,24000,32000,40000,48000,51000,59000,67000,75000,83000,91000,99000,107000,115000,123000,131000,139000
+,RECOMMENDED SERVICE DATE,"Aug 5, 22","Feb 1, 23","Jul 31, 23","Jan 27, 24","Jul 25, 24","Jan 21, 25","Jul 20, 25","Jan 16, 26","Jul 15, 26","Jan 11, 27","Jul 10, 27","Jan 6, 28","Jul 4, 28","Dec 31, 28","Jun 29, 29","Dec 26, 29","Jun 24, 30","Dec 21, 30"
+Action,Maintenance                                        ,,,,,,,,,,,,,,,,,,
+Replace,Engine Oil,,Y,,Y,,Y,Y,Y,,Y,,Y,,Y,,Y,,Y
+Replace,Oil Filter,,Y,,Y,,Y,Y,Y,,Y,,Y,,Y,,Y,,Y
+Replace,Cabin Air Filter,,Y,,Y,,Y,Y,Y,Y,Y,,Y,,Y,,Y,,Y
+Replace,Smart Key Battery,,,Y,,,Y,Y,,,,,Y,,,Y,,,Y
+Replace,Brake Fluids,,,,,,N,Y,,,,,Y,,,,,,Y
+Replace,Engine Air Filter,,,,,,N,Y,,,,,Y,,,,,,Y
+Replace,Spark Plugs,,,,,,,,Y,,,,,,Y,,,,
+Inspect,"Fluids ( Brakes, Coolant )",Y,,Y,,Y,,Y,,,,Y,,Y,,Y,,Y,
+Inspect,Axle Shaft Boots,,,Y,,,Y,,,Y,,,Y,,,Y,,,Y
+Inspect,Body,,,Y,,,Y,,,Y,,,Y,,,Y,,,Y
+Inspect,Ball Joints / Dust Covers,,,Y,,,Y,,,Y,,,Y,,,Y,,,Y
+Inspect,"Brakes Pads, Calipers, Rotors",Y,Y,Y,Y,Y,,Y,Y,Y,Y,Y,,Y,Y,Y,Y,Y,
+Inspect,Brake Lines & Hoses,,,Y,,,Y,,,Y,,,Y,,,Y,,,Y
+Inspect,Brake Rotor Thickness & Runout,,,,,,Y,,,,,,Y,,,,,,Y
+Inspect,Drive Belt,,,,,,,,,,,,Y,,,Y,,,Y
+Inspect,Engine Air Filter,,,,,,,,,,,,,,,,,,
+Inspect,Engine Coolant,,,Y,,,Y,,,Y,,,Y,,,Y,,,Y
+Inspect,Exhaust Pipes & Mounting,,,Y,,,Y,,,Y,,,Y,,,Y,,,Y
+Inspect,Fuel Tank Gasket,,,,,,Y,,,,,,Y,,,,,,Y
+Inspect,Fuel Lines Connection and System Hoses,,,,,,Y,,,,,,Y,,,,,,Y
+Inspect,Intercooler Coolant,,,Y,,,Y,,,Y,,,Y,,,Y,,,Y
+Inspect,Rack-and Pinion Assembly,,,Y,,,Y,,,Y,,,Y,,,,,,Y
+Inspect,Rear Differential Oil,,,Y,,,Y,,,,,,Y,,,Y,,,Y
+Inspect,Steering Linkage & Boots,,,Y,,,Y,,,Y,,,Y,,,Y,,,Y
+Inspect,Transmission For Leakage,,,,,,Y,,,,,,Y,,,,,,Y
+Inspect,Transmission Fluid Cooler Hoses & Connections,,,,,,Y,,,,,,Y,,,,,,Y
+Inspect,Wiper Blades,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y
+Inspect,Tires,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y
+Tighten,Nuts and Bolts on Chasis,,,,,,,,,,,,,,,,,,
+Test,Car on the road,Y,Y,Y,Y,Y,,Y,Y,Y,Y,Y,,Y,Y,Y,Y,Y,
+Reset,Oil Maintenance Reminder,,Y,,Y,,Y,,Y,,Y,,Y,,Y,,Y,,Y
+Reset,Scheduled Maintenance Reminder,,Y,,Y,,Y,,Y,Y,Y,Y,Y,,Y,,Y,Y,Y

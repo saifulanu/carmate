@@ -1,0 +1,17 @@
+,,,,,,,,,,,,,,,,,,
+,RECOMMENDED SERVICE KM,17000,25000,33000,41000,49000,57000,65000,73000,81000,89000,97000,105000,113000,121000,129000,137000,145000
+,RECOMMENDED SERVICE DATE,"Aug 20,25","Feb 16,26","Aug 15,26","Feb 11,27","Aug 10,27","Feb 6,28","Aug 4,28","Jan 31,29","Jul 30,29","Jan 26,30","Jul 25,30","Jan 21,31","Jul 20,31","Jan 16,32","Jul 14,32","Jan 10,33","Jul 9,33"
+Action,Maintenance                                          ,,,,,,,,,,,,,,,,,
+Replace,Engine Oil - 0W20 3.5L,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y
+Replace,Oil Filter,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y
+Replace,Drain Plug Gasket - Engine Oil,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y
+Replace,Drain Plug Gasket - CVT,,,,,,,,,Y,,,,,,,,
+Replace,Cabin Air Filter,Y,,Y,,Y,,Y,,Y,,Y,,Y,,Y,,Y
+Replace,Smart Key Battery,,,,,,,,,,,,,,,,,
+Replace,Brake Fluids 0.5L,,,Y,,,,Y,,,,,,Y,,,,Y
+Replace,Engine Air Filter,Y,,Y,,,,Y,,Y,,Y,,Y,,,,Y
+Replace,Spark Plugs,,,,,,,,,,,,,,,,,
+Replace,Transmission Fluid ,,,,,,,,,,,,,,,,,
+Replace,Radiator Coolant - 2L,,,Y,,,,Y,,,,,,Y,,,,Y
+Inspect,Wiper Blades,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y
+Inspect,Tires,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y
