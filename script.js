@@ -4378,6 +4378,8 @@ document.addEventListener('DOMContentLoaded', function() {
   const customToggle = document.getElementById('customToggle');
   const customSchedules = document.getElementById('customSchedules');
   const customToggleLabel = document.getElementById('customToggleLabel');
+  const addToCalendarBtn = document.getElementById('addToCalendarBtn');
+  let currentResult = null;
   
   // Handle custom toggle - listen on the label for better mobile support
   const toggleCustomSchedules = function(e) {
@@ -4460,6 +4462,56 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     resultDiv.style.display = 'block';
+    
+    // Store result for calendar export
+    currentResult = {
+      mileage: result.nextMileage,
+      date: result.expectedDate,
+      car: schedules[carKey].name,
+      items: result
+    };
+  });
+  
+  // Add to Google Calendar
+  addToCalendarBtn.addEventListener('click', function() {
+    if (!currentResult) return;
+    
+    // Build event title
+    const title = `Car Maintenance - ${currentResult.car} (${currentResult.mileage.toLocaleString()} km)`;
+    
+    // Build event description with all items
+    let description = `Scheduled maintenance for ${currentResult.car} at ${currentResult.mileage.toLocaleString()} km\n\n`;
+    
+    const itemCategories = [
+      { name: 'REPLACE', items: currentResult.items.replaceItems },
+      { name: 'INSPECT', items: currentResult.items.inspectItems },
+      { name: 'TEST', items: currentResult.items.testItems },
+      { name: 'TIGHTEN', items: currentResult.items.tightenItems },
+      { name: 'RESET', items: currentResult.items.resetItems }
+    ];
+    
+    itemCategories.forEach(category => {
+      if (category.items.length > 0) {
+        description += `${category.name}:\n`;
+        category.items.forEach(item => {
+          description += `• ${item}\n`;
+        });
+        description += '\n';
+      }
+    });
+    
+    // Parse date for Google Calendar format (YYYYMMDD)
+    const dateObj = new Date(currentResult.date);
+    const year = dateObj.getFullYear();
+    const month = String(dateObj.getMonth() + 1).padStart(2, '0');
+    const day = String(dateObj.getDate()).padStart(2, '0');
+    const dateStr = `${year}${month}${day}`;
+    
+    // Create Google Calendar URL
+    const calendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(title)}&dates=${dateStr}/${dateStr}&details=${encodeURIComponent(description)}&sf=true&output=xml`;
+    
+    // Open in new window/tab
+    window.open(calendarUrl, '_blank');
   });
 });
 

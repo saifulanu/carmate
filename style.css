@@ -176,6 +176,15 @@ button:hover{
 button:active{
   transform:translateY(0);
 }
+.calendar-btn{
+  width:100%;
+  margin:16px 0;
+  background:linear-gradient(135deg,#10b981 0%,#059669 100%);
+  box-shadow:0 4px 12px rgba(16, 185, 129, 0.3);
+}
+.calendar-btn:hover{
+  box-shadow:0 6px 16px rgba(16, 185, 129, 0.4);
+}
 .result{
   margin-top:32px;
   padding-top:28px;
