@@ -4460,11 +4460,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     resultDiv.style.display = 'block';
-    
-    // Smooth scroll to results on mobile
-    setTimeout(function() {
-      resultDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    }, 100);
   });
 });
 
