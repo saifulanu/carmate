@@ -4474,7 +4474,11 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   
   // Add to Google Calendar
-  addToGoogleCalendarBtn.addEventListener('click', function() {
+  addToGoogleCalendarBtn.addEventListener('click', handleGoogleCalendarExport);
+  addToGoogleCalendarBtn.addEventListener('touchend', handleGoogleCalendarExport);
+  
+  function handleGoogleCalendarExport(e) {
+    if (e.type === 'touchend') e.preventDefault();
     if (!currentResult) return;
     
     // Build event title
@@ -4516,10 +4520,14 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Open in new window/tab
     window.open(calendarUrl, '_blank');
-  });
+  }
   
   // Add to Apple Calendar (.ics file download)
-  addToAppleCalendarBtn.addEventListener('click', function() {
+  addToAppleCalendarBtn.addEventListener('click', handleAppleCalendarExport);
+  addToAppleCalendarBtn.addEventListener('touchend', handleAppleCalendarExport);
+  
+  function handleAppleCalendarExport(e) {
+    if (e.type === 'touchend') e.preventDefault();
     if (!currentResult) return;
     
     // Build event title
@@ -4581,7 +4589,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-  });
+  }
 });
 
 console.log('Maintenance scheduler loaded. Data for', Object.keys(schedules).length, 'cars.');
