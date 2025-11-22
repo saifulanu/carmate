@@ -4382,17 +4382,18 @@ document.addEventListener('DOMContentLoaded', function() {
   const toggleCustomSchedules = function() {
     if (customToggle.checked) {
       customSchedules.classList.remove('hidden');
-      customSchedules.style.display = 'flex';
     } else {
       customSchedules.classList.add('hidden');
-      customSchedules.style.display = 'none';
       // Reset to manufacturer when hiding custom options
       document.querySelector('input[value="manufacturer"]').checked = true;
     }
   };
   
   customToggle.addEventListener('change', toggleCustomSchedules);
-  customToggle.addEventListener('click', toggleCustomSchedules);
+  customToggle.addEventListener('click', function(e) {
+    // Small delay to ensure checkbox state is updated
+    setTimeout(toggleCustomSchedules, 10);
+  });
   
   calcBtn.addEventListener('click', function() {
     const currentMileage = parseInt(mileageInput.value);
