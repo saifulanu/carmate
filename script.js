@@ -4378,7 +4378,8 @@ document.addEventListener('DOMContentLoaded', function() {
   const customToggle = document.getElementById('customToggle');
   const customSchedules = document.getElementById('customSchedules');
   const customToggleLabel = document.getElementById('customToggleLabel');
-  const addToCalendarBtn = document.getElementById('addToCalendarBtn');
+  const addToGoogleCalendarBtn = document.getElementById('addToGoogleCalendarBtn');
+  const addToAppleCalendarBtn = document.getElementById('addToAppleCalendarBtn');
   let currentResult = null;
   
   // Handle custom toggle - listen on the label for better mobile support
@@ -4473,7 +4474,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   
   // Add to Google Calendar
-  addToCalendarBtn.addEventListener('click', function() {
+  addToGoogleCalendarBtn.addEventListener('click', function() {
     if (!currentResult) return;
     
     // Build event title
@@ -4515,6 +4516,71 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Open in new window/tab
     window.open(calendarUrl, '_blank');
+  });
+  
+  // Add to Apple Calendar (.ics file download)
+  addToAppleCalendarBtn.addEventListener('click', function() {
+    if (!currentResult) return;
+    
+    // Build event title
+    const title = `Car Maintenance - ${currentResult.car} (${currentResult.mileage.toLocaleString()} km)`;
+    
+    // Build event description with all items
+    let description = `Scheduled maintenance for ${currentResult.car} at ${currentResult.mileage.toLocaleString()} km\\n\\n`;
+    
+    const itemCategories = [
+      { name: 'REPLACE', items: currentResult.items.replaceItems },
+      { name: 'INSPECT', items: currentResult.items.inspectItems },
+      { name: 'TEST', items: currentResult.items.testItems },
+      { name: 'TIGHTEN', items: currentResult.items.tightenItems },
+      { name: 'RESET', items: currentResult.items.resetItems }
+    ];
+    
+    itemCategories.forEach(category => {
+      if (category.items.length > 0) {
+        description += `${category.name}:\\n`;
+        category.items.forEach(item => {
+          description += `• ${item}\\n`;
+        });
+        description += '\\n';
+      }
+    });
+    
+    description += '\\n⏰ Reminder: Set notification for 5 days before service date';
+    
+    // Parse date for iCal format
+    const dateObj = new Date(currentResult.date);
+    const year = dateObj.getFullYear();
+    const month = String(dateObj.getMonth() + 1).padStart(2, '0');
+    const day = String(dateObj.getDate()).padStart(2, '0');
+    
+    // Create iCal format (.ics file)
+    const icsContent = [
+      'BEGIN:VCALENDAR',
+      'VERSION:2.0',
+      'PRODID:-//Car Maintenance Scheduler//EN',
+      'BEGIN:VEVENT',
+      `DTSTART;VALUE=DATE:${year}${month}${day}`,
+      `DTEND;VALUE=DATE:${year}${month}${day}`,
+      `SUMMARY:${title}`,
+      `DESCRIPTION:${description}`,
+      'BEGIN:VALARM',
+      'TRIGGER:-P5D',
+      'ACTION:DISPLAY',
+      `DESCRIPTION:${title}`,
+      'END:VALARM',
+      'END:VEVENT',
+      'END:VCALENDAR'
+    ].join('\r\n');
+    
+    // Create blob and download
+    const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = `car-maintenance-${currentResult.mileage}km.ics`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   });
 });
 
