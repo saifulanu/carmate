@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Lexus IS300 Maintenance Schedule</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <div class="card">
+        <h1>🚗 Maintenance Scheduler</h1>
+
+        <p class="hint">Select your car and enter your current mileage to see your next scheduled maintenance with detailed service items.</p>
+
+        <label for="carSelect">Select Car</label>
+        <select id="carSelect" class="car-select">
+          <option value="is300">Lexus IS300</option>
+          <option value="ativa">Perodua Ativa</option>
+        </select>
+
+        <label for="mileage">Current Mileage (km)</label>
+        <div class="input-row">
+          <input id="mileage" type="number" min="0" placeholder="e.g. 8732" />
+          <button id="calcBtn">Calculate</button>
+        </div>
+
+        <section id="result" class="result hidden">
+          <div class="row"><strong>Next maintenance mileage:</strong> <span id="nextMileage">—</span></div>
+          <div class="row"><strong>Expected date:</strong> <span id="nextDate">—</span></div>
+
+          <div class="cols">
+            <!-- Action columns will be dynamically generated here -->
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
