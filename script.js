@@ -4377,22 +4377,31 @@ document.addEventListener('DOMContentLoaded', function() {
   const resultDiv = document.getElementById('result');
   const customToggle = document.getElementById('customToggle');
   const customSchedules = document.getElementById('customSchedules');
+  const customToggleLabel = document.getElementById('customToggleLabel');
   
-  // Handle custom toggle - use both click and change for iOS compatibility
-  const toggleCustomSchedules = function() {
+  // Handle custom toggle - listen on the label for better mobile support
+  const toggleCustomSchedules = function(e) {
+    // Prevent default to handle it ourselves
+    if (e && e.target.tagName === 'LABEL') {
+      e.preventDefault();
+      customToggle.checked = !customToggle.checked;
+    }
+    
     if (customToggle.checked) {
-      customSchedules.classList.remove('hidden');
+      customSchedules.style.display = 'flex';
     } else {
-      customSchedules.classList.add('hidden');
+      customSchedules.style.display = 'none';
       // Reset to manufacturer when hiding custom options
       document.querySelector('input[value="manufacturer"]').checked = true;
     }
   };
   
   customToggle.addEventListener('change', toggleCustomSchedules);
-  customToggle.addEventListener('click', function(e) {
-    // Small delay to ensure checkbox state is updated
-    setTimeout(toggleCustomSchedules, 10);
+  customToggleLabel.addEventListener('click', toggleCustomSchedules);
+  customToggleLabel.addEventListener('touchend', function(e) {
+    e.preventDefault();
+    customToggle.checked = !customToggle.checked;
+    toggleCustomSchedules();
   });
   
   calcBtn.addEventListener('click', function() {
