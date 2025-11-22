@@ -409,9 +409,29 @@ const schedules = {
 // Result: The schedule object above shows this structure with multiple action types.
 
 // -------------------------------------------------
+// Date calculation utility
+// calculateExpectedDate(currentMileage, nextMileage) => Date string
+// - Calculates expected service date based on rate: 8000 km = 6 months
+// - Assumes current mileage was driven today
+
+function calculateExpectedDate(currentMileage, nextMileage) {
+  const kmDifference = nextMileage - currentMileage;
+  const monthsToNext = (kmDifference / 8000) * 6; // 8000 km = 6 months
+  
+  const today = new Date();
+  const expectedDate = new Date(today);
+  expectedDate.setMonth(expectedDate.getMonth() + Math.round(monthsToNext));
+  
+  // Format as "MMM DD, YYYY"
+  const options = { year: 'numeric', month: 'short', day: 'numeric' };
+  return expectedDate.toLocaleDateString('en-US', options);
+}
+
+// -------------------------------------------------
 // Calculation logic
-// findNextMaintenance(currentMileage, carKey) => { column, actionGroups: { replace:[], inspect:[], ... } }
+// findNextMaintenance(currentMileage, carKey) => { column, actionGroups: { replace:[], inspect:[], ... }, expectedDate }
 // - Finds the next schedule column with mileage > currentMileage for the selected car.
+// - Calculates expected date based on rate: 8000 km = 6 months from today.
 // - If found, returns the column and items grouped by action type.
 // - If no next mileage is found, returns null for column and empty action groups.
 
@@ -435,8 +455,11 @@ function findNextMaintenance(currentMileage, carKey) {
   const next = withMileage.find(c => c.mileage > currentMileage) || null;
 
   if (!next) {
-    return { column: null, actionGroups: {} };
+    return { column: null, actionGroups: {}, expectedDate: null };
   }
+
+  // Calculate expected date based on current mileage and next mileage
+  const expectedDate = calculateExpectedDate(currentMileage, next.mileage);
 
   const actionGroups = {};
 
@@ -460,7 +483,7 @@ function findNextMaintenance(currentMileage, carKey) {
     actionGroups[action].push(item.name);
   }
 
-  return { column: next, actionGroups };
+  return { column: next, actionGroups, expectedDate };
 }
 
 // -------------------------------------------------
@@ -487,7 +510,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     resultSection.classList.remove('hidden');
     nextMileageEl.textContent = res.column.mileage;
-    nextDateEl.textContent = res.column.date || '—';
+    nextDateEl.textContent = res.expectedDate || '—';
 
     // Get all action types and sort them (replace first, then alphabetically)
     const actionTypes = Object.keys(res.actionGroups).sort((a, b) => {
