@@ -4375,6 +4375,19 @@ document.addEventListener('DOMContentLoaded', function() {
   const mileageInput = document.getElementById('mileage');
   const carSelect = document.getElementById('carSelect');
   const resultDiv = document.getElementById('result');
+  const customToggle = document.getElementById('customToggle');
+  const customSchedules = document.getElementById('customSchedules');
+  
+  // Handle custom toggle
+  customToggle.addEventListener('change', function() {
+    if (this.checked) {
+      customSchedules.classList.remove('hidden');
+    } else {
+      customSchedules.classList.add('hidden');
+      // Reset to manufacturer when hiding custom options
+      document.querySelector('input[value="manufacturer"]').checked = true;
+    }
+  });
   
   calcBtn.addEventListener('click', function() {
     const currentMileage = parseInt(mileageInput.value);

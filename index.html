@@ -26,12 +26,23 @@
             <span>Manufacturer Service</span>
           </label>
           <label class="radio-label">
+            <input type="radio" name="scheduleType" value="recommended">
+            <span>Recommended Service</span>
+          </label>
+          <label class="radio-label custom-toggle">
+            <input type="checkbox" id="customToggle">
+            <span>Custom Intervals</span>
+          </label>
+        </div>
+
+        <div id="customSchedules" class="schedule-options custom-schedules hidden">
+          <label class="radio-label">
             <input type="radio" name="scheduleType" value="yours">
-            <span>Your Service</span>
+            <span>Your Service (8,000km)</span>
           </label>
           <label class="radio-label">
-            <input type="radio" name="scheduleType" value="recommended">
-            <span>Yours + Recommended</span>
+            <input type="radio" name="scheduleType" value="yours_recommended">
+            <span>Yours + Recommended (8,000km)</span>
           </label>
         </div>
 

@@ -112,6 +112,26 @@ label:first-of-type{
   color:var(--accent);
   font-weight:600;
 }
+.custom-toggle{
+  background:#f8fafc !important;
+  border-style:dashed !important;
+}
+.custom-toggle input[type=checkbox]{
+  width:16px;
+  height:16px;
+  cursor:pointer;
+  margin:0;
+}
+.custom-schedules{
+  margin-top:12px;
+  padding-top:12px;
+  border-top:2px dashed var(--border);
+  animation:slideDown 0.3s ease;
+}
+@keyframes slideDown{
+  from{opacity:0;transform:translateY(-10px)}
+  to{opacity:1;transform:translateY(0)}
+}
 .input-row{
   display:flex;
   gap:12px;
