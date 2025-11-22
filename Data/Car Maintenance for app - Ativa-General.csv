@@ -1,0 +1,16 @@
+,MANUFACTURER SERVICE KM,10000,20000,30000,40000,50000,60000,70000,80000,90000,100000,110000,120000,130000,140000,150000,160000,170000,180000,190000
+,YOUR SERVICE KM,7000,17000,27000,37000,47000,57000,67000,77000,87000,97000,107000,117000,127000,137000,147000,157000,167000,177000,187000
+,YOURS + RECOMMENDED SERVICE KM ,9000,17000,25000,33000,41000,49000,57000,65000,73000,81000,89000,97000,105000,113000,121000,129000,137000,145000,153000
+Action,Maintenance                                          ,,,,,,,,,,,,,,,,,,,
+Replace,Engine Oil - 0W20 3.5L,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y
+Replace,Element S/A Oil Filter,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y
+Replace,Drain Plug Gasket - Engine Oil,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y
+Replace,Drain Plug Gasket - CVT,,,,,,,,,,Y,,,,,,,,,,,,,,,,,,,Y,,,,,,,,,,,,,,,,,,,Y,,,,,,,,,
+Replace,"Element, Air Clearner Filter",,,,Y,,,,Y,,,,,,Y,,,,Y,,,,,Y,,,,Y,,,,,,Y,,,,Y,,,,,Y,,,,Y,,,,,,Y,,,,Y,
+Replace,"Element, Air Refiner",,Y,,Y,,Y,,Y,,Y,,Y,,Y,,Y,,Y,,,Y,,Y,,Y,,Y,,Y,,Y,,Y,,Y,,Y,,,Y,,Y,,Y,,Y,,Y,,Y,,Y,,Y,,Y,
+Replace,Spark Plugs,,,,,,,,,,Y,,,,,,,,,,,,,,,,,,,Y,,,,,,,,,,,,,,,,,,,Y,,,,,,,,,
+Replace,CVT Fluid - 3L,,,,,,,,,,Y,,,,,,,,,,,,,,,,,,,Y,,,,,,,,,,,,,,,,,,,Y,,,,,,,,,
+Replace,Brake Fluid - 1L,,,,Y,,,,Y,,,,,,Y,,,,Y,,,,,Y,,,,Y,,,,,,Y,,,,Y,,,,,Y,,,,Y,,,,,,Y,,,,Y,
+Replace,Radiator Coolant - 2L,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Inspect,Wiper Blades,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y
+Inspect,Tires,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y

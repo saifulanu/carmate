@@ -9,7 +9,7 @@
   <body>
     <main class="container">
       <div class="card">
-        <h1>🚗 Maintenance Scheduler</h1>
+        <h1>🚗 MAINTENANCE SCHEDULER</h1>
 
         <p class="hint">Select your car and enter your current mileage to see your next scheduled maintenance with detailed service items.</p>
 
@@ -19,6 +19,22 @@
           <option value="ativa">Perodua Ativa</option>
         </select>
 
+        <label>Service Schedule Type</label>
+        <div class="schedule-options">
+          <label class="radio-label">
+            <input type="radio" name="scheduleType" value="manufacturer" checked>
+            <span>Manufacturer Service</span>
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="scheduleType" value="yours">
+            <span>Your Service</span>
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="scheduleType" value="recommended">
+            <span>Yours + Recommended</span>
+          </label>
+        </div>
+
         <label for="mileage">Current Mileage (km)</label>
         <div class="input-row">
           <input id="mileage" type="number" min="0" placeholder="e.g. 8732" />
@@ -27,7 +43,7 @@
 
         <section id="result" class="result hidden">
           <div class="row"><strong>Next maintenance mileage:</strong> <span id="nextMileage">—</span></div>
-          <div class="row"><strong>Expected date:</strong> <span id="nextDate">—</span></div>
+          <div class="row"><strong>Suggested service date:</strong> <span id="nextDate">—</span></div>
 
           <div class="cols">
             <!-- Action columns will be dynamically generated here -->
