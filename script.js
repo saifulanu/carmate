@@ -4488,6 +4488,14 @@ document.addEventListener('DOMContentLoaded', function() {
     
     resultDiv.style.display = 'block';
     
+    // Show supplier card only for Lexus IS300
+    const supplierCard = document.getElementById('supplierCard');
+    if (carKey === 'is300') {
+      supplierCard.style.display = 'block';
+    } else {
+      supplierCard.style.display = 'none';
+    }
+    
     // Scroll to timeline after a brief delay to ensure DOM is updated
     setTimeout(function() {
       const timeline = document.querySelector('.timeline-container');
